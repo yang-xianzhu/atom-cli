@@ -21,8 +21,9 @@ inquirer
     ])
     .then((answers) => {
         const { tarName, template } = answers
-        const remote = `https://github.com/yang-xianzhu/atom-cli/tree/main/templates/${template}`
+        const remote = `github:yang-xianzhu/atom-cl#templates/${template}`
         const spinner = ora('download template......').start()
+        console.log(remote);
         download(remote, tarName, { clone: true }, function (err) {
             if (err) {
                 spinner.fail()

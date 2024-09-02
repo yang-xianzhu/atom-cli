@@ -20,8 +20,8 @@ inquirer
         },
     ])
     .then((answers) => {
-        const { tarName } = answers
-        const remote = 'https://github.com:johanazhu/koa-basic#master'
+        const { tarName, template } = answers
+        const remote = `https://github.com/yang-xianzhu/atom-cli/tree/main/templates/${template}`
         const spinner = ora('download template......').start()
         download(remote, tarName, { clone: true }, function (err) {
             if (err) {
